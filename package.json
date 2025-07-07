@@ -11,13 +11,16 @@
     "prod": "cross-env NODE_ENV=prod npm run build",
     "sanity": "npm run prettier && npm run lint",
     "start": "vite --port 5050 --open",
+    "start:test": "vite --port 5050",
     "storybook": "cross-env NODE_ENV=dev concurrently \"node cmp.esbuild.mjs\" \"npm run register-partial-watch\" \"cross-env NODE_OPTIONS='--openssl-legacy-provider' storybook dev -p 6006\"",
     "register-partial-watch": "nodemon --watch src --ext html .storybook/registerPartials.js",
     "register-partial": "node .storybook/registerPartials.js",
     "test": "PLINKO=true jest --update-snapshot --silent && jest",
     "testone": "PLINKO=true jest --update-snapshot --silent $npm_config_template && jest $npm_config_template",
     "homesetup": "node home.setup.js",
-    "test:accessibility": "playwright test"
+    "test:accessibility": "playwright test",
+    "test:accessibility:debug": "playwright test --debug",
+    "health-check": "node scripts/health-check.js"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",

@@ -27,6 +27,13 @@ function loopOver(collection) {
 }
 
 export default defineConfig({
+  root: './',
+  publicDir: 'public',
+  server: {
+    port: 5050,
+    open: false,
+    host: 'localhost',
+  },
   plugins: [
     handlebars({
       partialDirectory: path.resolve(__dirname, 'src/components'),

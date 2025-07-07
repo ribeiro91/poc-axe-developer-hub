@@ -5,10 +5,10 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: './src',
+  testDir: "./src",
   /* Run tests in files in parallel */
   fullyParallel: true,
-  testMatch: ['**/*playwright.spec.js'],
+  testMatch: ["**/*playwright.spec.js"],
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -17,38 +17,38 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['json', { outputFile: 'test-results/accessibility-results.json' }],
-    ['list', { printSteps: true }],
-    ['html', { open: 'never' }],
+    ["json", { outputFile: "test-results/accessibility-results.json" }],
+    ["list", { printSteps: true }],
+    ["html", { open: "never" }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://localhost:5050',
+    baseURL: "http://localhost:5050",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: "on-first-retry",
 
     /* Take screenshot on failure */
-    screenshot: 'only-on-failure',
+    screenshot: "only-on-failure",
 
     /* Record video on failure */
-    video: 'retain-on-failure',
+    video: "retain-on-failure",
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: "chromium",
+      use: { ...devices["Desktop Chrome"] },
     },
   ],
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'npm run start',
-    url: 'http://localhost:5050',
+    command: "npm run start:test",
+    url: "http://localhost:5050",
     reuseExistingServer: !process.env.CI,
-    timeout: 120 * 1000,
+    timeout: 20 * 1000,
   },
 });
