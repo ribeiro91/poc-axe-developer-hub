@@ -16,17 +16,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: npm install
-      - name: Run tests
+      - run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Run accessibility tests
+        # This step runs the accessibility tests using Playwright and Axe.
         run: npm run test:accessibility
         env:
           API_KEY: ${{ secrets.AXE_WATCHER_API_KEY }}
-  axe-dev-hub:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs: playwright
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./
-        with:
-          api_key: ${{ secrets.AXE_WATCHER_API_KEY }}
