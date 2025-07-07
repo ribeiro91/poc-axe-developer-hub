@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      font-family: "Open Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-variation-settings:
+        "wdth" 100;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="padding: 20px">
+    <div class="mb-8">
+      <h4 class="mb-2">Rounded</h4>
+      {{> button/rounded-button-theme-4-5-partial classes="cmp-btn__rounded
+      cmp-btn__rounded__sm cmp-btn__full-width--mobile mb-2" text="Button Text"
+      }}
+    </div>
+  </div>
+  <script type="module" src="/src/components/button/button.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+/bin/*
+
+storybook-static
+build
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# svg font stuff to ignore
+/src/globals/fonts/svgs/react/
+/src/globals/fonts/svgs/icon.hash
+/src/globals/fonts/svgs/icon.json
+/src/globals/fonts/svgs/icon.module.less
+/src/globals/fonts/svgs/icon.less
+/src/globals/fonts/svgs/icon.scss
+/src/globals/fonts/svgs/icon.styl
+__image_snapshots__
+
+partial-mapping.json
+
+# Internal filter files ignore
+/src/components/internal-filter/clientlibs/js*
+
+/components-clientlibs
+
+/test-results
+/playwright-report
+/node_modules
